@@ -1,0 +1,33 @@
+<?php
+
+$gui = new \classes\Component\GUI();
+$gui->opendiv("getting_started", 'span8');
+    $gui->opendiv("", 'section');
+    $gui->title("Sobre a API");
+    $gui->paragraph("Nossa API é voltada para que programadores possam desenvolver novos aplicativos utilizando o site ". SITE_NOME);
+    $gui->paragraph("Uma das características desta API é a utilização do padrão "
+            . "<a href='http://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern' target='_BLANK'><b>publisher-subscriber</b></a>. Que consiste "
+            . "em cadastrar o seu app no nosso site e uma url de retorno para a qual mandaremos as informações. Do nosso lado temos informações relevantes "
+            . "publicadas quando algum evento ocorre no site. Por exemplo: se uma empresa cadastrada atualiza seu balanço. Se o seu app necessita deste "
+            . "tipo de informação, os dados referentes a atualização do balanço serão enviados para a url cadastrada");
+    $gui->paragraph("Uma das consequências deste padrão adotado é que o site não será sobrecarregado pelos aplicativos buscando informações."
+            . "A informação chegará aos aplicativos quando se tornarem disponíveis");
+    $gui->closediv();
+
+    $gui->opendiv("", 'section');
+    $url = $this->Html->getLink('api/publisher/index');
+    $gui->title("Formato de dados");
+    $gui->paragraph("Por padrão os dados enviados como resposta por nossa API estão em formato "
+            . "<a href='http://en.wikipedia.org/wiki/JSON' target='_BLANK'><b>json</b></a>. Contudo cada publisher (informação relevante da qual o seu app "
+            . "irá assinar) pode escolher seu próprio formato de dados. É necessário ler a documentação dos publishers que estão sendo assinados. "
+            . "Para a lista completa de publishers <a href='$url'><b>clique aqui</b></a>.");
+    $gui->closediv();
+    
+    $gui->opendiv("", 'section');
+    $url = $this->Html->getLink('api/app/manage');
+    $gui->title("Criando o seu app");
+    $gui->paragraph("");
+    $gui->paragraph("Para criar seu app <a href='$url'><b>clique aqui</b></a>");
+    $gui->closediv();
+    
+$gui->closediv();

@@ -1,0 +1,8 @@
+<?php
+
+$gui = new \classes\Component\GUI();
+$gui->opendiv('', 'span7');
+    classes\Component\widget::executeWidgets(array(
+        'api/app/widgets/myappsWidget' => array(), 
+    ));
+$gui->closediv();
